@@ -4,9 +4,9 @@ import http.cookiejar as cookielib
 from texttable import Texttable
 
 parser = argparse.ArgumentParser(description='Spam web phising dengan script ini')
-parser.add_argument('-u', '--url', dest='url', help='URL phising tujuan untuk di spam', default='')
-parser.add_argument('-p', '--pesan', dest='pesan', help='Pesan untuk pembuat phising', default='')
-parser.add_argument('-py', '--proxy', dest='proxy', help='Proxy untuk digunakan spam URL (contoh: 127.0.0.1:8080)', default='')
+parser.add_argument('-u', '--url', dest='url', help='Phising URL destination', default='')
+parser.add_argument('-m', '--message', dest='pesan', help='Message for phising creator', default='')
+parser.add_argument('-py', '--proxy', dest='proxy', help='Use proxy during spamming (example: 127.0.0.1:8080)', default='')
 args = parser.parse_args()
 
 def getpos():
