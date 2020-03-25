@@ -5,7 +5,7 @@ from texttable import Texttable
 
 parser = argparse.ArgumentParser(description='Spam web phising dengan script ini')
 parser.add_argument('-u', '--url', dest='url', help='Phising URL destination', default='')
-parser.add_argument('-m', '--message', dest='pesan', help='Message for phising creator', default='')
+parser.add_argument('-m', '--message', dest='message', help='Message for phising creator', default='')
 parser.add_argument('-py', '--proxy', dest='proxy', help='Use proxy during spamming (example: 127.0.0.1:8080)', default='')
 args = parser.parse_args()
 
@@ -54,16 +54,16 @@ br.set_handled_schemes(['http', 'https'])
 
 if args.url == '':
 	while True:
-		url = input('masukan url:')
+		url = input('insert url destination:')
 		if url == '':
-			print('url tidak boleh kosong')
+			print('please fill url')
 		else:
 			break
 else:
 	url = args.url
 count = 0
 gagal = 0
-jml = input('masukan jumlah (kosongkan untuk unlimited):')
+jml = input('insert number of spam (empty = unlimited):')
 try:
 	jml = int(jml)
 except ValueError:
@@ -72,32 +72,32 @@ except ValueError:
 		jml = int(round(jml))
 	except ValueError:
 		jml = str('unlimited')
-if args.pesan == '':
+if args.message == '':
 	while True:
-		pesan = input('masukan pesan untuk pembuat phising:')
-		if pesan == '':
-			print('pesan ga boleh kosong')
+		message = input('insert message for phising creator:')
+		if message == '':
+			print('please fill the message')
 		else:
 			break
 else:
-	pesan = args.pesan
+	pesan = args.message
 proxy = args.proxy
 clear = lambda: os.system('clear')
 clear()
 table = Texttable()
-tabhead = ['url'.upper(),'pesan'.upper(),'jumlah spam'.upper()]
+tabhead = ['url'.upper(),'message'.upper(),'number of spam'.upper()]
 (tabhead.insert(2,'proxy') if proxy != '' else '')
 table.header(tabhead)
 col, line = os.get_terminal_size()
 table.set_max_width(col)
-tabrows = [url, pesan, jml]
+tabrows = [url, message, jml]
 (tabrows.insert(2,proxy) if proxy != '' else '')
 table.add_rows([tabrows], header=False)
 print(table.draw())
 l, c = getpos()
 while(count != jml):
 	info = Texttable()
-	headinfo = ['paket terkirim','berhasil','gagal','waktu']
+	headinfo = ['packet send','success','failed','timd']
 	#(headinfo.insert(3, 'proxy') if args.proxy != '' else '')
 	info.header(headinfo)
 	col, line = os.get_terminal_size()
@@ -113,7 +113,7 @@ while(count != jml):
 			for input in html.controls:
 				if str(input.type) != 'hidden' and str(input.type) != 'select' and input.name != None:
 					#print(input.type)
-					br[str(input.name)] = pesan
+					br[str(input.name)] = message
 				elif input.type == 'select':
 					for item in br.find_control(input.name).items:
 						if str(item) != '*':
