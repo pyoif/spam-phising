@@ -1,9 +1,9 @@
-#SPAM-PHISING
+# SPAM-PHISING
 
 Tools ini digunakan untuk spam web phsing atau untuk ddos link phising
 (*This tools used for spamming phising web or ddos phising web*)
 
-##USAGE
+## USAGE
 
 python spam.py -h
 usage: spam.py [-h] [-u URL] [-m PESAN] [-py PROXY]
