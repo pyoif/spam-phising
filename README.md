@@ -1,4 +1,6 @@
 # SPAM-PHISING
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FKafeThein%2Fspam-phising.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FKafeThein%2Fspam-phising?ref=badge_shield)
+
 
 Tools ini digunakan untuk spam web phsing atau untuk ddos link phising
 (*This tools used for spamming phising web or ddos phising web*)
@@ -25,3 +27,7 @@ or
 python spam.py
 
 and the script will ask you url destination and message, just fill them.
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FKafeThein%2Fspam-phising.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FKafeThein%2Fspam-phising?ref=badge_large)
